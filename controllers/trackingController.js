@@ -5,7 +5,7 @@ const express = require("express");
 const authenticateToken = require("../middleware/authMiddleware");
 const router = express.Router();
 
-router.post("/addPaxMapping", [authenticateToken], async (req, res) => {
+router.post("/addPaxMapping", async (req, res) => {
   const validation = new Validator(req.body, {
     pax_id: "required|string",
     shipment_id: "required|string",
